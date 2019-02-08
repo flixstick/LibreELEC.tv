@@ -295,6 +295,33 @@ post_makeinstall_target() {
     cp $PKG_DIR/scripts/setwakeup.sh $INSTALL/usr/bin
 
   mkdir -p $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/plugin.program.flixstick $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/plugin.video.crackle $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/plugin.video.iplayerwww $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/plugin.video.itv $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/plugin.video.youtube $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/repository.flixstick $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/resource.images.studios.white $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/resource.uisounds.flixstick $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.artwork.downloader $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.common.plugin.cache $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.extendedinfo $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.favourites $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.globalsearch $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.actionhandler $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.addon.signals $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.autocompletion $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.parsedom $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.requests $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.simplejson $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.six $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.t9.search $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.unidecode $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.module.youtube.dl $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.skinshortcuts $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/script.toolbox $INSTALL/usr/share/kodi/addons
+    cp -R $PKG_DIR/config/skin.flixstick $INSTALL/usr/share/kodi/addons
+
     cp -R $PKG_DIR/config/os.openelec.tv $INSTALL/usr/share/kodi/addons
     $SED "s|@OS_VERSION@|$OS_VERSION|g" -i $INSTALL/usr/share/kodi/addons/os.openelec.tv/addon.xml
     cp -R $PKG_DIR/config/os.libreelec.tv $INSTALL/usr/share/kodi/addons
@@ -347,6 +374,33 @@ post_makeinstall_target() {
   xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "os.openelec.tv" $ADDON_MANIFEST
   xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "repository.libreelec.tv" $ADDON_MANIFEST
   xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "service.libreelec.settings" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "plugin.program.flixstick" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "plugin.video.crackle" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "plugin.video.iplayerwww" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "plugin.video.itv" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "plugin.video.youtube" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "repository.flixstick" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "resource.images.studios.white" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "resource.uisounds.flixstick" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.artwork.downloader" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.common.plugin.cache" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.extendedinfo" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.favourites" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.globalsearch" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.actionhandler" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.addon.signals" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.autocompletion" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.parsedom" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.requests" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.simplejson" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.six" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.t9.search" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.unidecode" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.module.youtube.dl" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.skinshortcuts" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "script.toolbox" $ADDON_MANIFEST
+  xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "skin.flixstick" $ADDON_MANIFEST
+
   if [ "$PROJECT" = "Slice" -o "$PROJECT" = "Slice3" ]; then
     xmlstarlet ed -L --subnode "/addons" -t elem -n "addon" -v "service.slice" $ADDON_MANIFEST
   fi
